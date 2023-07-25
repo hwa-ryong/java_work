@@ -1,0 +1,7 @@
+package basic_p;
+
+public class Second {
+	
+	int a = 10;
+	int b = 10 + 20;
+}
