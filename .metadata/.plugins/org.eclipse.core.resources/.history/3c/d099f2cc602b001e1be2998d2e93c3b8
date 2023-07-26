@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>369</title>
+</head>
+<body>
+<h1>369 게임 입니다.</h1>
+<%
+	for(int i=1; i<=20; i++) {
+	 	if(i % 3 == 0) {
+	 		out.println("박수");
+	 	}else {
+	 		out.println(i);
+	 	}
+	}
+%>
+</body>
+</html>
