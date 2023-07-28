@@ -1,0 +1,50 @@
+package basic_p;
+
+import java.util.Arrays;
+
+public class ArgsMain {
+
+	public static void main(String[] args) {
+		System.out.println("내가 argsMain 이다 : "+args.length);
+		
+		System.out.println(Arrays.toString(args));  // 배열 다 나옴
+		
+		int sum = 0;
+		int avg = 0;
+		int length = 0;
+		int max = Integer.MAX_VALUE;
+		int min = Integer.MIN_VALUE;
+		
+		for(String str : args) {
+			try {
+				int intValue = Integer.parseInt(str);
+				System.out.println("숫자 입니다.");
+
+				if(intValue % 2 == 0) {
+					System.out.println("짝수: " + str);
+					sum += intValue;
+					length++;
+					avg = sum / length;
+				}
+				
+				if (max < intValue) {
+					max = intValue;
+				}
+				
+				
+				System.out.println("합계: " + sum);
+				System.out.println("평균: " + avg);
+				System.out.println("최대값: " + max);
+				System.out.println("최소값: " + min);
+				
+
+			}catch (Exception e) {
+				System.out.println("숫자를 입력해주세요.");
+
+			}
+			
+		}	
+	}
+}
+
+
