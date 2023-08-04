@@ -14,6 +14,7 @@ public class BDetail implements BoardService{
 		System.out.println("BDetail.execute() 실행");
 		
 		int id = Integer.parseInt(request.getParameter("id"));
+		new BoardDAO().addCount(id);
 		//넘어오는 지 확인 작업.
 		//System.out.println(new BoardDAO().detail(id));
 		request.setAttribute("mainData", new BoardDAO().detail(id));

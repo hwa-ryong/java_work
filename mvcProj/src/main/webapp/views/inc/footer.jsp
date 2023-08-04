@@ -8,7 +8,7 @@
 	</tr>
 	<tr>
 		<td align="center">
-			타노스 싫어
+			타노스
 		</td>
 	</tr>
 </table>

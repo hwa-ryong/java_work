@@ -1,7 +1,8 @@
-package model_p;
+ package model_p;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Pattern;
 
 public class BoardDTO {
 	String title, pname, pw, upfile, content;
@@ -37,8 +38,24 @@ public class BoardDTO {
 		this.pw = pw;
 	}
 	public String getUpfile() {
+		
+		if(upfile==null || 
+			upfile.trim().equals("") ||
+			upfile.trim().equals("null")) {
+			upfile = "";
+		}
+		
+		
 		return upfile;
 	}
+	
+	public boolean isImg() {
+		//Pattern.matches(. << 점이 있으면 앞에 어떤 글자가 있어도 상관없다. ///  * << 별이 있으면 뒤에 몇자리가 와도 상관없다.)
+		boolean res = Pattern.matches(".*[.](jpg|bmp|png|gif)", getUpfile().toLowerCase()); //어느 것이 들어오는 지 검사하겠다.
+		
+		return res;
+	}
+	
 	public void setUpfile(String upfile) {
 		this.upfile = upfile;
 	}
