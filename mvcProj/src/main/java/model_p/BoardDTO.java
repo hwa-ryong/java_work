@@ -40,7 +40,7 @@ public class BoardDTO {
 	public String getUpfile() {
 		
 		if(upfile==null || 
-			upfile.trim().equals("") ||
+			upfile.trim().equals("") || // trim : 앞뒤 공백을 없애준다. 사이에 있는 공백은 못 없앤다.
 			upfile.trim().equals("null")) {
 			upfile = "";
 		}

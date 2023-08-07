@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model_p.PageData;
 import ser_p.BList;
 
 /**
@@ -42,7 +43,8 @@ public class BoardController extends HttpServlet {
 		
 		try {
 			request.setCharacterEncoding("utf-8");
-			request.setAttribute("mainPage", serviceStr);
+			request.setAttribute("mainPage", "board/"+serviceStr);
+			request.setAttribute("pd", new PageData(request));
 			//newInstance는 리턴을 Object로 받는다.
 			//Object service = Class.forName("ser_p."+serviceStr).newInstance();
 			BoardService service = (BoardService)Class.forName("ser_p."+serviceStr).newInstance(); 
